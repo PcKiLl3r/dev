@@ -29,19 +29,19 @@
       - lua5.1
       - liblua5.1-0-dev
 
-  - name: Clone Personal Repos
-    ansible.builtin.git:
-      repo: "https://github.com/theprimeagen/{{ repo }}.git"
-      dest: "{{ personal }}/{{ repo }}"
-      depth: 1
-    vars:
-      repos:
-      - harpoon
-      - vim-apm
-      - vim-with-me
-    loop_control:
-      loop_var: repo
-    with_items: "{{ repos }}"
+#  - name: Clone Personal Repos
+#    ansible.builtin.git:
+#      repo: "https://github.com/pckill3r/{{ repo }}.git"
+#      dest: "{{ personal }}/{{ repo }}"
+#      depth: 1
+#    vars:
+#      repos:
+#      - harpoon
+#      - vim-apm
+#      - vim-with-me
+#    loop_control:
+#      loop_var: repo
+#    with_items: "{{ repos }}"
 
   - name: Plenary
     ansible.builtin.git:
@@ -55,14 +55,14 @@
     args:
       chdir: "{{ home }}/neovim"
 
-  - name: Rust... btw
-    become: true
-    ansible.builtin.shell:
-      cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#  - name: Rust... btw
+#    become: true
+#    ansible.builtin.shell:
+#      cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-  - name: stylua
-    ansible.builtin.shell:
-      cmd: cargo install stylua
+#  - name: stylua
+#    ansible.builtin.shell:
+#      cmd: cargo install stylua
 
   - name: luarocks
     become: true
