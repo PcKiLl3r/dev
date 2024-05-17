@@ -1,6 +1,6 @@
 - hosts: localhost
   vars:
-    username: "pckill3r"
+    username: "grega"
     email: "zorko.grega@gmail.com"
     ssh_key_filename: "id_zorko_rsa"
     config: "{{ lookup('ansible.builtin.env', 'XDG_CONFIG') }}"
